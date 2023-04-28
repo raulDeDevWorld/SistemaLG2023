@@ -487,7 +487,7 @@ La firma de recepcion en este Manifiesto de Carga es la constancia de que se ha 
                             <Text style={styles.valueElaborador}>NOMBRE:</Text>
                             <Text style={styles.valueElaboradorLine}></Text>
                             <Text style={styles.valueElaborador}>NOMBRE:</Text>
-                            <Text style={styles.valueElaboradorLine}>{pdfData["MC-NOMBRE"] && pdfData["MC-NOMBRE"]}</Text>
+                            <Text style={styles.valueElaboradorLine}>{pdfData && pdfData["MC-NOMBRE TRANSPORTISTA"] && pdfData["MC-NOMBRE TRANSPORTISTA"]}</Text>
                         </View>
                         <View style={styles.viewKeyValue} >
                             <Text style={styles.valueElaborador}>FECHA:</Text>
