@@ -384,7 +384,7 @@ function CotizacionMaritima() {
                             <label htmlFor="">MEDIO DE TRANSPORTE</label>
                             <select name="MEDIO DE TRANSPORTE" onChange={handleEventChange}>
                                 <option value="">Seleccione una opcion</option>
-                                <option value="PORTA CONTENEDORES">FCL</option>
+                                <option value="FCL">FCL</option>
                                 <option value="BULK CARGO">BULK CARGO</option>
                                 <option value="RORO">RORO</option>
                                 <option value="CHARTER">CHARTER</option>
