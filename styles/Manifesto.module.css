@@ -434,7 +434,7 @@
 
 
 
-.itemsTwo label {
+.itemsTwo label, .itemsThree label {
   background-color: #294B98;
     color: white;
 }
