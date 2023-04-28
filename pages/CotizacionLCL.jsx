@@ -312,7 +312,7 @@ function CotizacionTerrestre() {
                     <br />
 
 
-                    <div className={style.subtitle}>DESCRPCION<span className={style.counterPluss} onClick={() => handlerCounter('pluss')}>+</span> <span className={style.counterLess} onClick={() => handlerCounter('less')}>-</span></div>
+                    <div className={style.subtitle}>DESCRIPCIÓN<span className={style.counterPluss} onClick={() => handlerCounter('pluss')}>+</span> <span className={style.counterLess} onClick={() => handlerCounter('less')}>-</span></div>
 
                     <br />
                     <div className={`${style.containerFirstItems2} ${style.desktop}`}>
