@@ -15,7 +15,7 @@ export default class MyDocument extends Document {
                     <meta name="description" content="Sistema de Administracion de Clientes y Formularios" />
                     <meta name="keywords" content="Logistics Gear" />
                     <meta name="author" content="Logistics Gear" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
                 </Head>
                 <body>
                     <Main />
