@@ -103,7 +103,7 @@ function Users() {
                 telefono: pdfData['AD-TELEFONO'] ? pdfData['AD-TELEFONO'] : null,
                 cargo: pdfData['AD-CARGO'] ? pdfData['AD-CARGO'] : null,
                 ciudad: pdfData['AD-CIUDAD'] ? pdfData['AD-CIUDAD'] : null,
-                ci: pdfData['AD-DNI'] ? pdfData['AD-DNI'] : `LGC${counter}/`
+                ci: pdfData['AD-DNI'] ? pdfData['AD-DNI'] : `LGC${counter}`
 
             }
 
