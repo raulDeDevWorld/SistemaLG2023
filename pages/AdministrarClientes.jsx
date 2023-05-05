@@ -21,6 +21,8 @@ function Users() {
     const [rol, setRol] = useState('')
     const [filter, setFilter] = useState('')
     const [bank, setBank] = useState(false)
+    const [counter, setCounter] = useState('')
+
 
 
     const [viewForm, setViewForm] = useState(false)
@@ -92,8 +94,8 @@ function Users() {
             pdfData['AD-EMPRESA'] &&
             pdfData['AD-TELEFONO'] &&
             pdfData['AD-CARGO'] &&
-            pdfData['AD-CIUDAD'] &&
-            pdfData['AD-DNI']) {
+            pdfData['AD-CIUDAD']) 
+            {
             let obj = {
                 nombre: pdfData['AD-NOMBRE'] ? pdfData['AD-NOMBRE'] : null,
                 correo: pdfData['AD-CORREO'] ? pdfData['AD-CORREO'] : null,
@@ -101,13 +103,15 @@ function Users() {
                 telefono: pdfData['AD-TELEFONO'] ? pdfData['AD-TELEFONO'] : null,
                 cargo: pdfData['AD-CARGO'] ? pdfData['AD-CARGO'] : null,
                 ciudad: pdfData['AD-CIUDAD'] ? pdfData['AD-CIUDAD'] : null,
-                ci: pdfData['AD-DNI'] ? pdfData['AD-DNI'] : null
+                ci: pdfData['AD-DNI'] ? pdfData['AD-DNI'] : counter
 
             }
 
             let rute = obj.ci
 
             writeUserData(`users/${rute}/`, obj, setUserSuccess)
+            writeUserData(`/`, {counter: parseInt(counter)}, setUserSuccess)
+
         } else {
             setUserSuccess('Complete')
         }
@@ -159,34 +163,34 @@ function Users() {
     }
 
     useEffect(() => {
+        let count = userDB.counter ? `${userDB.counter + 1 < 10
+                ? '00' : ''}${userDB.counter + 1 > 9
+                    && userDB.counter + 1 < 100 ? '0' : ''}${userDB.counter + 1}`
+            : `001`
+        setCounter(count)
+
+
         userDB && userDB.users[user.uid] && userDB.users[user.uid].rol !== 'Admin' && router.push('/Formularios')
     }, [userDB, success])
 
-    console.log(pdfData)
+    console.log(userDB)
 
     return (
         <Layout>
-           <div className={style.container}>
+            <div className={style.container}>
                 {user && userDB && userDB.users && <main className={style.main}>
 
-
-
-
-           {user && userDB && userDB.admins && userDB.admins[user.uid] && userDB.admins[user.uid].rol === 'Admin' &&    <div className={style.blueContainer}>
+                    {user && userDB && userDB.admins && userDB.admins[user.uid] && userDB.admins[user.uid].rol === 'Admin' && <div className={style.blueContainer}>
                         <span className={style.blue}>Register</span>
 
                         <span className={`${style.circleBlueContainer} ${userDB.login ? '' : style.circleLeadContainer}`} onClick={resetAutomatico}>
                             <span className={`${style.circleBlue} ${userDB.login ? '' : style.circleLead}`}></span>
                         </span>
                     </div>
-}
+                    }
                     <div className={style.containerIMG}>
                         <Image src="/logo.svg" width="350" height="250" alt="User" />
                     </div>
-
-
-
-
 
                     {user && userDB && userDB.admins && userDB.admins[user.uid] && userDB.admins[user.uid].rol === 'Admin' && <div className={style.containerButtons}>
                         <Button style='buttonTransparent' click={redirect}>
@@ -275,7 +279,7 @@ function Users() {
                                 </Button>
                             </div>                        </form>
                     </div>}
-                {viewForm && itemSelect == '' &&
+                {userDB && viewForm && itemSelect == '' &&
                     <div className={style.formContainer}>
                         <form className={style.form} onSubmit={save}>
                             <span onClick={closeDC} className={style.x}>X</span>
@@ -309,7 +313,7 @@ function Users() {
                                 </div>
                                 <div>
                                     <label htmlFor="">CI</label>
-                                    <input type="text" name={"DNI"} onChange={handleEventChange} />
+                                    <input type="text" name={"DNI"} defaultValue={`LGC${counter}`} onChange={handleEventChange} />
                                 </div>
                             </div>
                             <br />
@@ -380,3 +384,4 @@ function Users() {
     )
 }
 export default WithAuth(Users) 
+
