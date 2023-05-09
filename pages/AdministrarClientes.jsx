@@ -202,7 +202,7 @@ function Users() {
                     <input className={style.filter} onChange={handlerOnChange} placeholder='Buscar Por CI' />
                     {user && userDB && userDB.users && <ul className={style.list}>
                         {Object.keys(userDB.users).map((item, i) => {
-                            if (userDB.users[item].ci.includes(filter) && user.uid !== item) {
+                            if ( userDB.users && userDB.users[item] && userDB.users[item].ci && userDB.users[item].ci.includes(filter) && user.uid !== item) {
                                 return <div className={style.itemsAdmin} key={i}>
                                     <Link href="#" >
                                         <a className={style.link}>{userDB.users[item].nombre}</a>
