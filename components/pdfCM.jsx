@@ -384,7 +384,7 @@ const PDFView = ({ click }) => {
                         <Text style={styles.subtitle}>TARIFA</Text>
                     
 
-                        {pdfData && pdfData["CM-MEDIO DE TRANSPORTE"] && pdfData["CM-MEDIO DE TRANSPORTE"] !== "" && pdfData["CM-MEDIO DE TRANSPORTE"] !== "PORTA CONTENEDORES" ?
+                        {pdfData && pdfData["CM-MEDIO DE TRANSPORTE"] && pdfData["CM-MEDIO DE TRANSPORTE"] !== "" && pdfData["CM-MEDIO DE TRANSPORTE"] !== "FCL" ?
 
                             <View style={styles.viewKeyValueTwo}>
                                 <Text style={styles.key}>DETALLE</Text>
@@ -543,3 +543,4 @@ const PDFView = ({ click }) => {
 
 
 export default PDFView
+
