@@ -451,7 +451,7 @@ function CotizacionMaritima() {
 
 
                     {
-                        pdfData && pdfData["CM-MEDIO DE TRANSPORTE"] && pdfData["CM-MEDIO DE TRANSPORTE"] == "PORTA CONTENEDORES" && <>
+                        pdfData && pdfData["CM-MEDIO DE TRANSPORTE"] && pdfData["CM-MEDIO DE TRANSPORTE"] == "FCL" && <>
                             <br />
                             <div className={style.subtitle}>TARIFA (Porta contenedores)<span className={style.counterPluss} onClick={() => handlerCounter('pluss')}>+</span> <span className={style.counterLess} onClick={() => handlerCounter('less')}>-</span></div>
                             <br />
@@ -484,7 +484,7 @@ function CotizacionMaritima() {
                     }
 
                     {
-                        pdfData && pdfData["CM-MEDIO DE TRANSPORTE"] && pdfData["CM-MEDIO DE TRANSPORTE"] !== "" && pdfData["CM-MEDIO DE TRANSPORTE"] !== "PORTA CONTENEDORES" && <>
+                        pdfData && pdfData["CM-MEDIO DE TRANSPORTE"] && pdfData["CM-MEDIO DE TRANSPORTE"] !== "" && pdfData["CM-MEDIO DE TRANSPORTE"] !== "FCL" && <>
                             <br />
                             <div className={style.subtitle}>TARIFA (Bulk cargo, charter o roro)<span className={style.counterPluss} onClick={() => handlerCounter('pluss')}>+</span> <span className={style.counterLess} onClick={() => handlerCounter('less')}>-</span></div>
                             <br />
@@ -606,4 +606,6 @@ function CotizacionMaritima() {
 }
 
 export default WithAuth(CotizacionMaritima)
+
+
 
