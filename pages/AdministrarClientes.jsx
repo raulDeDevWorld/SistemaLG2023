@@ -143,6 +143,7 @@ function Users() {
         setBank(!bank)
     }
     function closeDC() {
+        setUserPdfData({})
         setViewForm(!viewForm)
     }
     function resetAutomatico() {
@@ -322,7 +323,7 @@ function Users() {
                                 </div>
                                 <div>
                                     <label htmlFor="">CI</label>
-                                    <input type="text" name={"DNI"} defaultValue={LGC} onChange={handleEventChange} />
+                                    <input type="text" name={"DNI"} defaultValue={pdfData['AD-DNI']} onChange={handleEventChange} />
                                 </div>
                             </div>
                             <br />
