@@ -318,11 +318,16 @@ function Users() {
                             </div>
                             <br />
                             <div className={style.containerFilter}>
+                                <Button style='buttonPrimary'>
 
+                                    Generas LGC
+
+                                </Button>
                                 <Button style='buttonSecondary'>
                                     Guardar
                                 </Button>
-                            </div>                        </form>
+                            </div>             
+                            </form>
                     </div>
                 }
                 {bank && userDB && <div className={style.formContainer}>
