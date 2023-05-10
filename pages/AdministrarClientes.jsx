@@ -291,7 +291,7 @@ function Users() {
                     </div>}
                 {userDB && viewForm && itemSelect == '' &&
                     <div className={style.formContainer}>
-                        <form className={style.form} onSubmit={save}>
+                        <form className={style.form}>
                             <span onClick={closeDC} className={style.x}>X</span>
                             <div className={style.subtitle}>DATOS DE CLIENTE</div>
                             <br />
@@ -333,7 +333,7 @@ function Users() {
                                     Generas LGC
 
                                 </Button>
-                                <Button style='buttonSecondary'>
+                                <Button style='buttonSecondary' click={save}>
                                     Guardar
                                 </Button>
                             </div>             
