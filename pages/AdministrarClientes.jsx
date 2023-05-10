@@ -323,7 +323,7 @@ function Users() {
                             </div>
                             <br />
                             <div className={style.containerFilter}>
-                                <Button style='buttonPrimary'>
+                                <Button style='buttonPrimary' click={generateLGC}>
 
                                     Generas LGC
 
