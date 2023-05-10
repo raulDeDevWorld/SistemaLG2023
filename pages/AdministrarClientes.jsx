@@ -183,7 +183,7 @@ function Users() {
         userDB && userDB.users[user.uid] && userDB.users[user.uid].rol !== 'Admin' && router.push('/Formularios')
     }, [userDB, success])
 
-    console.log(userDB)
+    console.log(pdfData)
 
     return (
         <Layout>
