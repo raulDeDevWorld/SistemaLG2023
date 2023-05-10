@@ -22,7 +22,7 @@ function Users() {
     const [filter, setFilter] = useState('')
     const [bank, setBank] = useState(false)
     const [counter, setCounter] = useState('')
-
+    const [LGC, setLGC] = useState('')
 
 
     const [viewForm, setViewForm] = useState(false)
@@ -161,6 +161,11 @@ function Users() {
         }
         writeUserData(`bank/`, obj, setUserSuccess)
     }
+    
+    
+    function generateLGC () {
+        setLGC(`LGCLGC$${counter}`)
+        }
 
     useEffect(() => {
         let count = userDB.counter ? `${userDB.counter + 1 < 10
@@ -313,7 +318,7 @@ function Users() {
                                 </div>
                                 <div>
                                     <label htmlFor="">CI</label>
-                                    <input type="text" name={"DNI"} defaultValue={`LGC${counter}`} onChange={handleEventChange} />
+                                    <input type="text" name={"DNI"} defaultValue={LGC} onChange={handleEventChange} />
                                 </div>
                             </div>
                             <br />
