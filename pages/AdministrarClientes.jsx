@@ -9,7 +9,7 @@ import Modal from '../components/Modal'
 import Error from '../components/Error'
 import Button from '../components/Button'
 import Layout from '../layout/Layout'
-
+ 
 
 import Success from '../components/Success'
 import style from '../styles/AdminUsers.module.css'
@@ -168,7 +168,7 @@ function Users() {
     
     function generateLGC () {
         setLGC(`LGC${counter}`)
-        setUserPdfData({...pdfData, [AD-DNI]: `LGC${counter}`})
+        setUserPdfData({...pdfData, ['AD-DNI']: `LGC${counter}`})
         }
 
     useEffect(() => {
