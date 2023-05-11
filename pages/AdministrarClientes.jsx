@@ -89,6 +89,8 @@ function Users() {
     function save(e) {
         e.preventDefault()
 
+        console.log('save')
+
         if (pdfData['AD-NOMBRE'] &&
             pdfData['AD-CORREO'] &&
             pdfData['AD-EMPRESA'] &&
@@ -116,6 +118,8 @@ function Users() {
             writeUserData(`/`, {counter: parseInt(counter)}, setUserSuccess)
 
         } else {
+            console.log('dont save')
+
             setUserSuccess('Complete')
         }
     }
@@ -167,7 +171,8 @@ function Users() {
     }
     
     
-    function generateLGC () {
+    function generateLGC (e) {
+        e.preventDefault()
         setLGC(`LGC${counter}`)
         setUserPdfData({...pdfData, ['AD-DNI']: `LGC${counter}`})
         }
@@ -394,9 +399,13 @@ function Users() {
                 </div>}
                 {success == 'save' && <Success>Correcto</Success>}
                 {success == 'repeat' && <Error>Verifica e intenta de nuevo</Error>}
+                {success == 'Complete' && <Error>Completa el formulario</Error>}
+
             </div>
         </Layout>
     )
 }
 export default WithAuth(Users) 
+
+
 
